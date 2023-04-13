@@ -1,9 +1,16 @@
 package com.rd.epam.autotasks.scopes.config;
 
+import customscopes.postprocessors.ThreeTimesBeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ThreeTimesScopeConfig {
 
+    @Bean
+    public static BeanFactoryPostProcessor beanFactoryPostProcessor() {
+        return new ThreeTimesBeanFactoryPostProcessor();
+    }
 
 }
